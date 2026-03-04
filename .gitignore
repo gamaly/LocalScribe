@@ -20,6 +20,7 @@ env/
 # OS
 .DS_Store
 Thumbs.db
+.claude/
 
 # Audio files (user data, not for version control)
 audio/
