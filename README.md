@@ -1,5 +1,4 @@
-# Whisper Transcribe
-
+# LocalScribe
 Transcribe audio files locally using [OpenAI Whisper](https://github.com/openai/whisper). No cloud services, no API keys — everything runs on your machine.
 
 Supports **NVIDIA GPUs** (CUDA), **Apple Silicon** (MPS), and **CPU** fallback.
