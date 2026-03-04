@@ -1,0 +1,54 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "whisper-transcribe"
+version = "0.1.0"
+description = "Local audio transcription powered by OpenAI Whisper. Supports NVIDIA GPUs, Apple Silicon, and CPU."
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.10"
+authors = [
+    { name = "Gamal Thomas" },
+]
+keywords = ["whisper", "transcription", "audio", "speech-to-text", "local", "gpu"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: End Users/Desktop",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Multimedia :: Sound/Audio :: Speech",
+]
+dependencies = [
+    "openai-whisper>=20231117",
+    "torch>=2.0.0",
+    "torchaudio>=2.0.0",
+    "tqdm>=4.65.0",
+    "customtkinter>=5.2.0",
+]
+
+[project.optional-dependencies]
+cuda = [
+    "torch>=2.0.0",
+    "torchaudio>=2.0.0",
+]
+dev = [
+    "pyinstaller>=6.0",
+]
+
+[project.urls]
+Repository = "https://github.com/user/whisper-transcribe"
+
+[project.gui-scripts]
+whisper-transcribe = "whisper_transcribe.app:run_app"
+
+[project.scripts]
+whisper-transcribe-cli = "whisper_transcribe.transcribe:main"
+
+[tool.setuptools.packages.find]
+include = ["whisper_transcribe*"]
